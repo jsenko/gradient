@@ -6,7 +6,6 @@ import static java.lang.Integer.parseInt;
 import static java.lang.System.out;
 import static net.jsenko.pv260.gradient.cli.States.COLORS;
 import static net.jsenko.pv260.gradient.cli.States.DISPLAY_SIZE;
-import static net.jsenko.pv260.gradient.cli.States.DONE;
 
 /**
  * @author Jakub Senko
@@ -26,7 +25,7 @@ public class DisplaySizeState implements State {
         try {
             int x = parseInt(parts[0]);
             int y = parseInt(parts[1]);
-            if(x < 0 || y < 0) {
+            if (x < 0 || y < 0) {
                 out.println("Bad input format. Non-negative numbers required.");
                 return DISPLAY_SIZE;
             }

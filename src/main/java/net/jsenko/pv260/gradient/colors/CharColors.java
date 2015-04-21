@@ -10,7 +10,7 @@ public class CharColors implements Colors {
 
     private final String colorChars;
 
-    private static final int MAX_COLORS = 100;
+    public static final int MAX_COLORS = 100;
 
 
     public CharColors(String colorChars) {

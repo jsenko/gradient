@@ -5,6 +5,7 @@ import net.jsenko.pv260.gradient.cli.State;
 import static java.lang.System.out;
 import static net.jsenko.pv260.gradient.cli.States.COLORS;
 import static net.jsenko.pv260.gradient.cli.States.GRADIENT;
+import static net.jsenko.pv260.gradient.colors.CharColors.MAX_COLORS;
 
 /**
  * @author Jakub Senko
@@ -13,8 +14,13 @@ public class ColorsState implements State {
 
     @Override
     public State run(Handler handler, String data) {
-        if(data.length() < 2) {
+        if (data.length() < 2) {
             out.println("Bad input format. At least two colors are required.");
+            return COLORS;
+        }
+
+        if (data.length() > MAX_COLORS) {
+            out.println("Bad input format. Max " + MAX_COLORS + " colors are allowed.");
             return COLORS;
         }
 

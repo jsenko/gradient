@@ -1,9 +1,9 @@
 package net.jsenko.pv260.gradient.cli;
 
 import java.io.BufferedReader;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 
-import static java.lang.System.in;
 import static java.lang.System.out;
 import static java.util.Objects.requireNonNull;
 import static net.jsenko.pv260.gradient.cli.States.DISPLAY_SIZE;
@@ -33,7 +33,7 @@ public class CLI {
     }
 
 
-    public void run() {
+    public void run(InputStream in) {
         out.println("Size of the display (x y):");
 
         String input;

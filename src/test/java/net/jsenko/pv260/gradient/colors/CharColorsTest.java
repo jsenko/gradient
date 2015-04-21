@@ -11,6 +11,14 @@ public class CharColorsTest {
 
     public static final Colors COLORS = new CharColors("0123456789");
 
+    public static final String COLOR_STRING;
+
+    static {
+        String colors = ".";
+        for (int i = 0; i < 10; i++)
+            colors += "0123456789";
+        COLOR_STRING = colors;
+    }
 
     @Test(expected = IllegalArgumentException.class)
     public void itShouldFailOnOneColor() {
@@ -20,12 +28,10 @@ public class CharColorsTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void itShouldFailTooManyColors() {
-        String colors = ".";
-        for (int i = 0; i < 10; i++)
-            colors += "0123456789";
 
-        assertEquals(101, colors.length());
-        new CharColors(colors);
+
+        assertEquals(101, COLOR_STRING.length());
+        new CharColors(COLOR_STRING);
     }
 
 
