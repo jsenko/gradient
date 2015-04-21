@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 
 import static java.lang.System.in;
 import static java.lang.System.out;
+import static java.util.Objects.requireNonNull;
 import static net.jsenko.pv260.gradient.cli.States.DISPLAY_SIZE;
 
 /**
@@ -18,6 +19,7 @@ public class CLI {
 
 
     public CLI(Handler handler) {
+        requireNonNull(handler);
         this.handler = handler;
         state = DISPLAY_SIZE;
     }

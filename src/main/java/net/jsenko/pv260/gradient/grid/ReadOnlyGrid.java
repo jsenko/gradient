@@ -7,6 +7,9 @@ import net.jsenko.pv260.gradient.geometry.Point;
  */
 public interface ReadOnlyGrid<T> {
 
-
+    /**
+     * No size restrictions.
+     * May return null when no data available (or was set to null).
+     */
     T get(Point location);
 }

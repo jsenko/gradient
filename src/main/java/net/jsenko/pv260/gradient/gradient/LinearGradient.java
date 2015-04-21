@@ -1,9 +1,12 @@
 package net.jsenko.pv260.gradient.gradient;
 
-import net.jsenko.pv260.gradient.grid.ReadOnlyGrid;
 import net.jsenko.pv260.gradient.geometry.Point;
-import static java.lang.Math.*;
-import static net.jsenko.pv260.gradient.geometry.Geometry.*;
+import net.jsenko.pv260.gradient.grid.ReadOnlyGrid;
+import static java.lang.Math.max;
+import static java.lang.Math.min;
+import static java.util.Objects.requireNonNull;
+import static net.jsenko.pv260.gradient.geometry.Geometry.dot;
+import static net.jsenko.pv260.gradient.geometry.Geometry.sub;
 
 /**
  * @author Jakub Senko
@@ -17,6 +20,10 @@ public class LinearGradient implements ReadOnlyGrid<Double> {
 
 
     public LinearGradient(Point origin, Point end) {
+        requireNonNull(origin);
+        requireNonNull(end);
+        if (origin.equals(end))
+            throw new IllegalArgumentException("Gradient points must not be the same.");
         this.origin = origin;
         this.end = end;
     }
@@ -24,7 +31,7 @@ public class LinearGradient implements ReadOnlyGrid<Double> {
 
     @Override
     public Double get(Point location) {
-
+        requireNonNull(location);
         // Vector projection
         Point u = sub(location, origin);
         Point v = sub(end, origin);

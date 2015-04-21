@@ -24,7 +24,13 @@ public class DisplaySizeState implements State {
         }
 
         try {
-            handler.displaySize(parseInt(parts[0]), parseInt(parts[1]));
+            int x = parseInt(parts[0]);
+            int y = parseInt(parts[1]);
+            if(x < 0 || y < 0) {
+                out.println("Bad input format. Non-negative numbers required.");
+                return DISPLAY_SIZE;
+            }
+            handler.displaySize(x, y);
         } catch (NumberFormatException e) {
             out.println("Bad input format. Numbers required.");
             return DISPLAY_SIZE;
