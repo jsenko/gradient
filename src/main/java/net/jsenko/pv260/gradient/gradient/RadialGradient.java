@@ -1,7 +1,9 @@
-package net.jsenko.pv260.gradient;
+package net.jsenko.pv260.gradient.gradient;
 
+import net.jsenko.pv260.gradient.grid.ReadOnlyGrid;
+import net.jsenko.pv260.gradient.geometry.Point;
 import static java.lang.Math.min;
-import static net.jsenko.pv260.gradient.Geometry.distance;
+import static net.jsenko.pv260.gradient.geometry.Geometry.distance;
 
 /**
  * @author Jakub Senko

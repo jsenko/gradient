@@ -1,7 +1,7 @@
-package net.jsenko.pv260.gradient;
+package net.jsenko.pv260.gradient.geometry;
 
 import static java.lang.Math.*;
-import static net.jsenko.pv260.gradient.Point.point;
+import static net.jsenko.pv260.gradient.geometry.Point.point;
 
 /**
  * @author Jakub Senko

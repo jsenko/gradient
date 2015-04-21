@@ -1,6 +1,7 @@
-package net.jsenko.pv260.gradient;
+package net.jsenko.pv260.gradient.grid;
 
-import static net.jsenko.pv260.gradient.Point.point;
+import net.jsenko.pv260.gradient.geometry.Point;
+import static net.jsenko.pv260.gradient.geometry.Point.point;
 
 /**
  * @author Jakub Senko

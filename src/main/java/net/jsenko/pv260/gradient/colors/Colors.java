@@ -1,4 +1,4 @@
-package net.jsenko.pv260.gradient;
+package net.jsenko.pv260.gradient.colors;
 
 /**
  * @author Jakub Senko

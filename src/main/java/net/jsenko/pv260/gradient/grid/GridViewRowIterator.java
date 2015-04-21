@@ -1,18 +1,20 @@
-package net.jsenko.pv260.gradient;
+package net.jsenko.pv260.gradient.grid;
 
 import java.util.function.BiConsumer;
 
-import static net.jsenko.pv260.gradient.Point.point;
+import net.jsenko.pv260.gradient.geometry.Point;
+import net.jsenko.pv260.gradient.grid.GridView;
+import static net.jsenko.pv260.gradient.geometry.Point.point;
 
 /**
  * @author Jakub Senko
  */
-public class RowGridViewIterator<T> {
+public class GridViewRowIterator<T> {
 
 
     private final GridView<T> view;
 
-    public RowGridViewIterator(GridView<T> view) {
+    public GridViewRowIterator(GridView<T> view) {
         this.view = view;
     }
 

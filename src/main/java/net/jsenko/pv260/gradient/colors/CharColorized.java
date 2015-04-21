@@ -1,4 +1,7 @@
-package net.jsenko.pv260.gradient;
+package net.jsenko.pv260.gradient.colors;
+
+import net.jsenko.pv260.gradient.geometry.Point;
+import net.jsenko.pv260.gradient.grid.ReadOnlyGrid;
 
 /**
  * @author Jakub Senko
