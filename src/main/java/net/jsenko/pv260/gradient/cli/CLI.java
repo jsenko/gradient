@@ -6,7 +6,6 @@ import java.io.InputStreamReader;
 import static java.lang.System.in;
 import static java.lang.System.out;
 import static net.jsenko.pv260.gradient.cli.States.DISPLAY_SIZE;
-import static net.jsenko.pv260.gradient.cli.States.EXIT;
 
 /**
  * @author Jakub Senko
@@ -26,7 +25,7 @@ public class CLI {
 
     public boolean read(String data) {
         state = state.run(handler, data);
-        if (state == EXIT)
+        if (state == null)
             return false;
         return true;
     }

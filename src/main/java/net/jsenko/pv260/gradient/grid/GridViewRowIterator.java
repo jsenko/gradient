@@ -24,9 +24,6 @@ public class GridViewRowIterator<T> {
             for (int x = 0; x < view.getWidth(); x++) {
                 Point location = point(x, y);
                 consumer.accept(location, view.get(location));
-
-            }
-            //System.out.println();
-        }
+            }                    }
     }
 }
