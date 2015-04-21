@@ -40,9 +40,9 @@ public class GridView<T> implements ReadOnlyGrid<T> {
     public T get(Point location) {
         requireNonNull(location);
         if (location.getX() < 0
-                && location.getX() >= width
-                && location.getY() < 0
-                && location.getY() >= height)
+                || location.getX() >= width
+                || location.getY() < 0
+                || location.getY() >= height)
             throw new IllegalArgumentException("Location is not within the GridView boundaries.");
 
         return grid.get(point(origin.getX() + location.getX(),

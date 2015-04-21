@@ -12,19 +12,19 @@ public class CharColorized implements ReadOnlyGrid<Character> {
 
     private final ReadOnlyGrid<Double> grid;
 
-    private final CharColors charColors;
+    private final Colors colors;
 
-    public CharColorized(ReadOnlyGrid<Double> grid, CharColors charColors) {
+    public CharColorized(ReadOnlyGrid<Double> grid, Colors colors) {
         requireNonNull(grid);
-        requireNonNull(charColors);
+        requireNonNull(colors);
         this.grid = grid;
-        this.charColors = charColors;
+        this.colors = colors;
     }
 
 
     @Override
     public Character get(Point location) {
         requireNonNull(location);
-        return charColors.color(grid.get(location));
+        return colors.color(grid.get(location));
     }
 }

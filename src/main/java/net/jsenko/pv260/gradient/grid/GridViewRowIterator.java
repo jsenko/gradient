@@ -3,7 +3,7 @@ package net.jsenko.pv260.gradient.grid;
 import java.util.function.BiConsumer;
 
 import net.jsenko.pv260.gradient.geometry.Point;
-import net.jsenko.pv260.gradient.grid.GridView;
+import static java.util.Objects.requireNonNull;
 import static net.jsenko.pv260.gradient.geometry.Point.point;
 
 /**
@@ -15,6 +15,7 @@ public class GridViewRowIterator<T> {
     private final GridView<T> view;
 
     public GridViewRowIterator(GridView<T> view) {
+        requireNonNull(view);
         this.view = view;
     }
 
@@ -24,6 +25,7 @@ public class GridViewRowIterator<T> {
             for (int x = 0; x < view.getWidth(); x++) {
                 Point location = point(x, y);
                 consumer.accept(location, view.get(location));
-            }                    }
+            }
+        }
     }
 }
